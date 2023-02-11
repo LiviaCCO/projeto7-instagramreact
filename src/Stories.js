@@ -1,84 +1,30 @@
 export default function Stories(){
 
+    const listaStory = [
+        {imagem: "assets/img/9gag.svg", texto: "9gag"},
+        {imagem: "assets/img/meowed.svg", texto: "meowed"},
+        {imagem: "assets/img/barked.svg", texto: "barked"},
+        {imagem: "assets/img/nathanwpylestrangeplanet.svg" , texto: "nathanwpylestrangeplanet"},
+        {imagem: "assets/img/wawawicomics.svg", texto: "wawawicomic"},
+        {imagem: "assets/img/respondeai.svg", texto: "respondeai"},
+        {imagem: "assets/img/filomoderna.svg", texto: "filomoderna"},
+        {imagem: "assets/img/memeriagourmet.svg", texto: "memeriagourmet"}
+    ];
+
     return (
-        <div class="stories">
-
-        <div class="story">
-            <div class="imagem">
-            <img data-test="post-image" src="assets/img/9gag.svg" alt="9gag"/>
-            </div>
-            <div class="usuario">
-            9gag
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img data-test="post-image" src="assets/img/meowed.svg" alt="meowed"/>
-            </div>
-            <div class="usuario">
-            meowed
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img data-test="post-image" src="assets/img/barked.svg" alt="barked"/>
-            </div>
-            <div class="usuario">
-            barked
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img data-test="post-image" src="assets/img/nathanwpylestrangeplanet.svg" alt="nathanwpylestrangeplanet"/>
-            </div>
-            <div class="usuario">
-            nathanwpylestrangeplanet
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img src="assets/img/wawawicomics.svg" alt="wawawicomics"/>
-            </div>
-            <div class="usuario">
-            wawawicomics
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img src="assets/img/respondeai.svg" alt="respondeai"/>
-            </div>
-            <div class="usuario">
-            respondeai
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img src="assets/img/filomoderna.svg" alt="filomoderna"/>
-            </div>
-            <div class="usuario">
-            filomoderna
-            </div>
-        </div>
-
-        <div class="story">
-            <div class="imagem">
-            <img src="assets/img/memeriagourmet.svg" alt="memeriagourmet"/>
-            </div>
-            <div class="usuario">
-            memeriagourmet
-            </div>
-        </div>
-
+        <ul class="stories">   
+            {listaStory.map((s)=>(
+                <li class="story">
+                    <div class="imagem">
+                        <img src={s.imagem} alt={s.texto} />
+                    </div>
+                    <div class="usuario">{s.texto}</div>   
+                </li>
+            ))}  
+    
         <div class="setinha">
             <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
-        </div>
-
+        </ul>
     )
 }

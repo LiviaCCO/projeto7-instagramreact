@@ -10,6 +10,10 @@ body {
   font-weight: 400;
   font-size: 14px;
 }
+/* Para retirar as bbolinhas das listas */
+ol, ul{
+  list-style: none;
+}
 
 .navbar {
   width: 100%;

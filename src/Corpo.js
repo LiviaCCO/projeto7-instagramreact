@@ -7,8 +7,8 @@ export default function Corpo(){
     return (
         <div class="corpo">
             <div class="esquerda">
-            <Stories/>
-            <Posts/>
+                <Stories/>
+                <Posts/>
             </div>
             <div class="sidebar">
                 <SideBar/>
