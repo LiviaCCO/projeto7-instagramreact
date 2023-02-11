@@ -25,9 +25,6 @@ export default function NavBar(){
                     <ion-icon name="compass-outline"></ion-icon>
                     <ion-icon name="heart-outline"></ion-icon>
                     <ion-icon name="person-outline"></ion-icon>
-                    {/* <ul>
-                        {listaIcones.map((icone) => <li>{icone}</li>)}
-                    </ul> */}
                 </div>
 
                 <div class="icones-mobile">

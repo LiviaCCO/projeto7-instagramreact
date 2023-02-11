@@ -70,16 +70,6 @@ ol, ul{
   text-align: center;
 }
 
-/* .navbar .icones {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 28px;
-  width: 100px;
-  background-color: aqua;
-} */
-
 .navbar .icones ion-icon {
   margin: 0 5px;
 }
