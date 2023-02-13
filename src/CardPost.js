@@ -2,20 +2,20 @@ import {useState} from 'react'
 
 export default function CardPost(props){
 
-    const [salvo, setSalvo] = useState("bookmark-outline");
-    const [curtir, setCurtir] = useState("heart-outline");
+    const [salvo, setSalvo] = useState(false);
+    const [curtir, setCurtir] = useState(false);
     let [numeroCurtidas, setNumeroCurtidas] = useState(Number(props.numero));
 
     function paraCurtir(){
         setCurtir(!curtir);
         console.log(curtir);
-        if(curtir ==="heart-outline" || curtir ===true){
+        if(curtir ===true){
             numeroCurtidas = Number(numeroCurtidas);
-            setNumeroCurtidas((numeroCurtidas + (0.001)).toFixed(3));
+            setNumeroCurtidas((numeroCurtidas - (0.001)).toFixed(3));
         }
         else if(curtir ===false){
             numeroCurtidas = Number(numeroCurtidas);
-            setNumeroCurtidas((numeroCurtidas - (0.001)).toFixed(3));
+            setNumeroCurtidas((numeroCurtidas + (0.001)).toFixed(3));
         }
     }
 
@@ -35,14 +35,14 @@ export default function CardPost(props){
                         <img src={props.conteudoImg} alt={props.conteudo}/>
                     </div>
                     <div class="fundo">
-                    <div class="acoes">
+                        <div class="acoes">
+                            <div>
+                                <ion-icon onClick={paraCurtir} class={curtir ? "md hydrated vermelho" : "md hydrated"} name={curtir ? "heart" : "heart-outline"}></ion-icon>
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                                <ion-icon name="paper-plane-outline"></ion-icon>
+                            </div>
                         <div>
-                        <ion-icon onClick={paraCurtir} class={curtir ? "md hydrated" : "md hydrated vermelho"} name={curtir ? "heart-outline" : "heart"}></ion-icon>
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                        <ion-icon name="paper-plane-outline"></ion-icon>
-                        </div>
-                        <div>
-                        <ion-icon onClick={()=>(setSalvo(!salvo))} name={salvo ? "bookmark-outline" : "bookmark"}></ion-icon>
+                        <ion-icon onClick={()=>(setSalvo(!salvo))} name={salvo ? "bookmark" : "bookmark-outline"}></ion-icon>
                         </div>
                     </div>
                     <div class="curtidas">
