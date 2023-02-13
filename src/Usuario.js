@@ -1,8 +1,8 @@
-import React from 'react'
+import {useState} from 'react'
 
 export default function Usuario(){
-    const [nome, setNome] = React.useState("catanacomics");
-    const [imagem, setImagem] = React.useState("assets/img/catanacomics.svg");  
+    const [nome, setNome] = useState("catanacomics");
+    const [imagem, setImagem] = useState("assets/img/catanacomics.svg");  
 
     function trocarNome(){
         let novoNome=prompt("Qual o seu nome?");
