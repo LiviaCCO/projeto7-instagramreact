@@ -21,7 +21,7 @@ export default function CardPost(props){
 
 
     return (
-        <div class="post">
+        <div data-test="post" class="post">
                     <div class="topo">
                     <div class="usuario">
                         <img src={props.imagem} alt={props.usuario}/>
@@ -32,22 +32,22 @@ export default function CardPost(props){
                     </div>
                     </div>
                     <div class="conteudo">
-                        <img src={props.conteudoImg} alt={props.conteudo}/>
+                        <img data-test="post-image" src={props.conteudoImg} alt={props.conteudo}/>
                     </div>
                     <div class="fundo">
                         <div class="acoes">
                             <div>
-                                <ion-icon onClick={paraCurtir} class={curtir ? "md hydrated vermelho" : "md hydrated"} name={curtir ? "heart" : "heart-outline"}></ion-icon>
+                                <ion-icon data-test="like-post" onClick={paraCurtir} class={curtir ? "md hydrated vermelho" : "md hydrated"} name={curtir ? "heart" : "heart-outline"}></ion-icon>
                                 <ion-icon name="chatbubble-outline"></ion-icon>
                                 <ion-icon name="paper-plane-outline"></ion-icon>
                             </div>
                         <div>
-                        <ion-icon onClick={()=>(setSalvo(!salvo))} name={salvo ? "bookmark" : "bookmark-outline"}></ion-icon>
+                        <ion-icon data-test="save-post" onClick={()=>(setSalvo(!salvo))} name={salvo ? "bookmark" : "bookmark-outline"}></ion-icon>
                         </div>
                     </div>
                     <div class="curtidas">
                         <img src={props.curtImg} alt={props.quem}/>
-                        <div class="texto">
+                        <div data-test="likes-number" class="texto">
                         Curtido por <strong>{props.quem}</strong> e <strong>outras {numeroCurtidas} pessoas</strong>
                         </div>
                     </div>
