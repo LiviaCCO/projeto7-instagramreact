@@ -19,6 +19,14 @@ export default function CardPost(props){
         }
     }
 
+    function curtirNaFoto(){
+        if(curtir ===false){
+            setCurtir(!curtir);
+            numeroCurtidas = Number(numeroCurtidas);
+            setNumeroCurtidas((numeroCurtidas + (0.001)).toFixed(3));
+        }
+    }
+
 
     return (
         <div data-test="post" class="post">
@@ -32,12 +40,12 @@ export default function CardPost(props){
                     </div>
                     </div>
                     <div class="conteudo">
-                        <img data-test="post-image" src={props.conteudoImg} alt={props.conteudo}/>
+                        <img onDoubleClick={curtirNaFoto} data-test="post-image" src={props.conteudoImg} alt={props.conteudo}/>
                     </div>
                     <div class="fundo">
                         <div class="acoes">
                             <div>
-                                <ion-icon data-test="like-post" onClick={paraCurtir} class={curtir ? "md hydrated vermelho" : "md hydrated"} name={curtir ? "heart" : "heart-outline"}></ion-icon>
+                                <ion-icon data-test="like-post" onClick={paraCurtir} class={curtir ? "md hydrated vermelho" : "md hydrated"} name={curtir ? "heart" : "heart-outline"}></ion-icon> 
                                 <ion-icon name="chatbubble-outline"></ion-icon>
                                 <ion-icon name="paper-plane-outline"></ion-icon>
                             </div>
