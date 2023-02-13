@@ -4,24 +4,18 @@ export default function CardPost(props){
 
     const [salvo, setSalvo] = useState("bookmark-outline");
     const [curtir, setCurtir] = useState("heart-outline");
-    const [numeroCurtidas, setNumeroCurtidas] = useState(Number(props.numero));
+    let [numeroCurtidas, setNumeroCurtidas] = useState(Number(props.numero));
 
     function paraCurtir(){
-        console.log(numeroCurtidas)
-        console.log(typeof(numeroCurtidas))
         setCurtir(!curtir);
-        console.log(numeroCurtidas.replace(".", ","))
-        let numeroPronto = numeroCurtidas.replace(".", ",");
-        console.log(numeroPronto)
-        if(curtir ==="heart-outline"){
-            numeroPronto=numeroPronto + 1;
-            numeroCurtidas = numeroPronto.replace(",",".");
-            setNumeroCurtidas(numeroCurtidas)
+        console.log(curtir);
+        if(curtir ==="heart-outline" || curtir ===true){
+            numeroCurtidas = Number(numeroCurtidas);
+            setNumeroCurtidas((numeroCurtidas + (0.001)).toFixed(3));
         }
-        else if(curtir ==="heart"){
-            numeroPronto--;
-            numeroCurtidas = numeroPronto.replace(",",".");
-            setNumeroCurtidas(numeroCurtidas)
+        else if(curtir ===false){
+            numeroCurtidas = Number(numeroCurtidas);
+            setNumeroCurtidas((numeroCurtidas - (0.001)).toFixed(3));
         }
     }
 
@@ -43,8 +37,7 @@ export default function CardPost(props){
                     <div class="fundo">
                     <div class="acoes">
                         <div>
-                        {/* <ion-icon onClick={()=>(setCurtir(!curtir))} class={curtir ? "" : "vermelho"} name={curtir ? "heart-outline" : "heart"}></ion-icon> */}
-                        <ion-icon onClick={paraCurtir} class={curtir ? "" : ""} name={curtir ? "heart-outline" : "heart"}></ion-icon>
+                        <ion-icon onClick={paraCurtir} class={curtir ? "md hydrated" : "md hydrated vermelho"} name={curtir ? "heart-outline" : "heart"}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
